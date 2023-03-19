@@ -7,7 +7,15 @@
   min-height: calc(100vh - var(--footer-header-height));
 }
 
-.link{
+.link {
   color: rgb(58, 58, 254);
   font-weight: bolder;
+  margin: 0 1ch;
+}
+
+.footer, .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
 }

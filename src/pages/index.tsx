@@ -44,8 +44,15 @@ export default function Home() {
         <meta name="description" content="App for learning chart.js" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <header style={{ margin: "10px" }}>
-        Data from <a href="https://swapi.dev/api/planets/" className={styles.link}>SWAPI</a>
+      <header className={styles.header}>
+        Data from{" "}
+        <a
+          href="https://swapi.dev/api/planets/"
+          className={styles.link}
+          target="_blank"
+        >
+          SWAPI
+        </a>
       </header>
       {isLoading ? (
         <main className={styles.main}>LOADING...</main>
@@ -55,7 +62,24 @@ export default function Home() {
           <ChartComponent chartData={planetsData.results} />
         </main>
       )}
-      <footer>Link to the app&apos;s code</footer>
+      <footer className={styles.footer}>
+        Links:{" "}
+        <a
+          href="https://learn-chartjs.vercel.app/"
+          target="_blank"
+          className={styles.link}
+        >
+          the app online
+        </a>
+        ||{" "}
+        <a
+          href="https://github.com/Forseti93/Chart.js"
+          target="_blank"
+          className={styles.link}
+        >
+          the code
+        </a>
+      </footer>
     </>
   );
 }
