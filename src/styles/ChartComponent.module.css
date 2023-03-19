@@ -1,0 +1,64 @@
+.chartTooltip {
+  --border-width: 3px;
+
+  background-color: rgb(40, 40, 40);
+  border-radius: var(--border-width);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, 50%);
+  transition: all 0.1s ease;
+  opacity: 1;
+  color: white;
+  padding: 10px;
+}
+.chartTooltip::after {
+  opacity: 1;
+  position: absolute;
+  content: "";
+  top: calc(-1 * var(--border-width));
+  left: calc(-1 * var(--border-width));
+  z-index: -1;
+  width: calc(100% + var(--border-width) * 2);
+  height: calc(100% + var(--border-width) * 2);
+  background: linear-gradient(
+    60deg,
+    hsl(224, 85%, 66%),
+    hsl(269, 85%, 66%),
+    hsl(314, 85%, 66%),
+    hsl(359, 85%, 66%),
+    hsl(44, 85%, 66%),
+    hsl(89, 85%, 66%),
+    hsl(134, 85%, 66%),
+    hsl(179, 85%, 66%)
+  );
+  background-size: 300% 300%;
+  background-position: 0 50%;
+  border-radius: calc(2 * var(--border-width));
+  animation: moveGradient 4s alternate infinite;
+}
+
+.tooltipList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.tooltipColor {
+  display: inline-block;
+  vertical-align: text-bottom;
+  height: 1rem;
+  width: 1rem;
+  border: 1px solid white;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
+}
